@@ -1,0 +1,85 @@
+// color picker
+.color-picker {
+  @include flex(center, flex-start);
+  z-index: 100;
+  position: fixed;
+  top: 15vh;
+  transform: translateX(-188px);
+  transition: 350ms transform ease-in-out;
+
+  @include responsive_small {
+    display: none;
+  }
+
+  .color-container {
+    padding: 23px 26px;
+    padding-top: 20px;
+    padding-right: 28px;
+    background-color: $white;
+    border-bottom-right-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    p {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19.2px;
+      color: #353348;
+    }
+
+    .color {
+      @include grid(9px);
+      grid-template-columns: repeat(3, 1fr);
+      padding-top: 13px;
+
+      &-block {
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        border: none;
+        border-radius: 40px;
+        transition: 180ms transform ease-in-out;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        &#purple {
+          background-color: $purple;
+        }
+        &#green {
+          background-color: $green;
+        }
+        &#yellow {
+          background-color: $yellow;
+        }
+        &#red {
+          background-color: $red;
+        }
+        &#blue {
+          background-color: $blue;
+        }
+        &#brown {
+          background-color: $brown;
+        }
+      }
+    }
+  }
+
+  &__toggle-btn {
+    @include flex(center, center);
+    width: 47px;
+    height: 45px;
+    cursor: pointer;
+    border: none;
+    background-color: #353348;
+    color: $white;
+    font-size: 18px;
+    border-radius: 0 8px 8px 0;
+    color: $white;
+  }
+}
+
+.color-picker__show {
+  transform: translateX(0);
+}

@@ -1,0 +1,197 @@
+// styles for header section
+
+.header {
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  transition: $global-transition, 200ms box-shadow linear;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    opacity: 0.7;
+    background-color: $pri_clr;
+    transition: $global-transition, 350ms width linear;
+  }
+
+  @include responsive_medium {
+    background-color: #ffffffe6;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+    .section-container {
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+    }
+  }
+
+  .section-container {
+    @include flex;
+    padding: 5px;
+    text-align: left;
+  }
+
+  .logo img {
+    width: 100px;
+  }
+
+  .nav {
+    @include responsive_medium {
+      display: none;
+    }
+
+    &-list {
+      @include flex;
+    }
+
+    &-item {
+      margin: 0 5px;
+    }
+
+    &-link {
+      color: $pri_grey;
+      padding: 10px !important;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 24px;
+
+      &:hover,
+      &:focus,
+      &.active {
+        color: $pri_clr;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .toggle-btn {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    top: 15px;
+    right: 15px;
+    padding: 7.5px 0;
+
+    @include responsive_medium {
+      display: block;
+    }
+
+    .bar {
+      width: 22px;
+      height: 2.5px;
+      background-color: $pri_dark;
+      border-radius: 40px;
+      position: relative;
+      transition: $global-transition;
+
+      &::before,
+      &::after {
+        content: '';
+        background-color: inherit;
+        border-radius: inherit;
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        transition: inherit;
+      }
+
+      &::before {
+        transform: translateY(7px);
+      }
+      &::after {
+        transform: translateY(-7px);
+      }
+    }
+  }
+
+  .button {
+    border-color: $pri_grey;
+    padding: 6px 16px;
+
+    @include responsive_large {
+      display: none;
+    }
+
+    i {
+      margin-left: 8px;
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: $pri_clr;
+    }
+  }
+}
+
+.header-toggle-active {
+  z-index: 100;
+
+  &:after {
+    width: 100%;
+  }
+
+  .section-container {
+    flex-direction: column;
+    align-items: start;
+    padding-bottom: 15px;
+  }
+
+  .nav {
+    display: block;
+    padding: 13px 0px;
+
+    &-list {
+      display: block;
+    }
+
+    &-item {
+      margin: 5px 0px;
+    }
+
+    &-link {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+  }
+
+  .button {
+    display: inline-block;
+  }
+
+  .bar {
+    transform: rotate(135deg);
+
+    &::before {
+      transform: translateY(0px) rotate(90deg) !important;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.header-scroll-active {
+  z-index: 100;
+  background-color: #ffffffe6;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+  .section-container {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .nav-link {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .button {
+    background-color: $pri_clr !important;
+    color: $white !important;
+    border-color: transparent;
+  }
+}

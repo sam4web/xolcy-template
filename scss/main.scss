@@ -1,0 +1,18 @@
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+// styles import
+@import './_responsive_mixins';
+@import './_mixins';
+@import './_colors';
+
+// general styles
+@import './_common';
+
+// sections
+@import './_header';
+@import './_footer';
+@import './_color_picker';
+
+// pages
+@import './_home';

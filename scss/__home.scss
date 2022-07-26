@@ -1,0 +1,570 @@
+// styles for home page
+// hero start
+.hero {
+  padding-top: 15vh;
+  margin-bottom: 70px;
+  height: 920px;
+  background-image: url(../img/hero-top-bg.png),
+    url(../img/hero-bottom-bg-img.png);
+  background-position: top, bottom;
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;
+
+  @media screen and (max-height: 675px) {
+    height: auto;
+    background-image: none;
+  }
+
+  @media screen and (max-height: 1068px) {
+    padding-top: 20vh;
+    height: 100vh;
+  }
+
+  @include responsive_small {
+    background-image: none;
+    height: auto;
+  }
+
+  .section-title {
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 62.4px;
+    margin-top: 16px;
+    margin-bottom: 19px;
+
+    @include responsive_medium {
+      font-size: 43px;
+      line-height: 53px;
+    }
+  }
+
+  .label {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: $pri_clr;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 19.2px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    color: $white;
+    opacity: 0.75;
+  }
+
+  .button-container {
+    margin-top: 20px;
+
+    .button {
+      margin-left: 10px;
+    }
+  }
+
+  &-swiper {
+    height: 320px;
+
+    @include responsive_small {
+      height: 350px;
+    }
+  }
+}
+// hero end
+
+// services start
+.services {
+  &-container {
+    margin-top: 65px;
+    @include grid(40px);
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+
+    @include responsive_small {
+      grid-template-columns: 1fr;
+    }
+
+    .service-item {
+      @include grid(20px);
+      max-width: 400px;
+      width: 100%;
+      cursor: context-menu;
+      text-align: left;
+      background-color: $white;
+      padding: 30px 25px;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      transition: 250ms all linear;
+
+      @include responsive_small {
+        padding: 25px 20px;
+      }
+
+      &__icon {
+        font-size: 50px !important;
+        color: $pri_clr;
+      }
+
+      &__title {
+        font-size: 18px;
+        line-height: 21.6px;
+      }
+
+      &__description {
+        color: $pri_grey;
+      }
+
+      &__link {
+        font-weight: 500;
+        color: $pri_clr;
+
+        &:hover i {
+          transform: translateX(3px);
+        }
+      }
+
+      &:hover,
+      &.active {
+        background-color: $pri_clr;
+        transform: translateY(-10px);
+        box-shadow: none;
+
+        & .service-item__icon,
+        & .service-item__link,
+        & .service-item__title {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+// services end
+
+// features start
+.feature {
+  background-color: #f9f9fd;
+
+  .section-container {
+    @include grid(40px, center, center);
+    grid-template-columns: repeat(2, 1fr);
+
+    @include responsive_medium {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    @include responsive_small {
+      padding-right: 25px;
+    }
+  }
+
+  .image-container {
+    justify-self: start;
+    position: relative;
+
+    @include responsive_medium {
+      justify-self: center;
+    }
+
+    .image {
+      width: 440px;
+      justify-self: start;
+      border-radius: 7px;
+
+      @include responsive_large {
+        width: 400px;
+      }
+
+      @include responsive_small {
+        width: 300px;
+      }
+    }
+
+    .user {
+      background-color: $pri_clr;
+      color: $white;
+      font-size: 28px;
+      font-weight: 300;
+      line-height: 33.6px;
+      padding: 20px 40px;
+      border-radius: 7px;
+      position: absolute;
+      bottom: 30px;
+      right: -120px;
+
+      @include responsive_large {
+        display: none;
+      }
+
+      @include responsive_medium {
+        display: block;
+        padding: 15px 20px;
+      }
+
+      @include responsive_small {
+        right: -20px;
+        bottom: 20px;
+        font-size: 18px;
+        line-height: 20px;
+        img {
+          width: 50px;
+        }
+      }
+    }
+  }
+
+  .content-container {
+    margin-left: 100px;
+    max-width: 460px;
+    justify-self: center;
+    text-align: left;
+
+    @include responsive_large {
+      margin: 0 auto;
+    }
+
+    ul {
+      margin: 20px 0;
+    }
+
+    li {
+      @include flex(flex-start, center);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19.6px;
+      margin-bottom: 6px;
+
+      span {
+        margin-right: 6px;
+        color: $pri_clr;
+      }
+    }
+  }
+}
+// features end
+
+// client start
+.client {
+  &-swiper {
+    margin-top: 40px;
+    height: 220px;
+
+    @include responsive_medium {
+      height: 280px;
+    }
+
+    @include responsive_small {
+      height: 310px;
+    }
+  }
+
+  .review-container {
+    text-align: left;
+    max-width: 500px;
+    @include grid;
+    grid-template-columns: 0.55fr 1fr;
+    border: 1px solid $pri_grey;
+    border-radius: 5px;
+    margin: 0 auto;
+
+    @include responsive_medium {
+      grid-template-columns: 1fr;
+    }
+
+    p {
+      color: $pri_grey;
+    }
+
+    .about {
+      padding: 15px 20px;
+      @include flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      border-right: inherit;
+
+      .icon {
+        font-size: 30px !important;
+        color: $pri_clr;
+        margin-bottom: 10px;
+      }
+
+      .user-name {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 21.6px;
+        color: $pri_dark;
+      }
+
+      @include responsive_medium {
+        border: none;
+        padding-bottom: 0;
+      }
+    }
+
+    .review {
+      padding: 15px 20px;
+
+      @include responsive_medium {
+        padding-top: 10px;
+      }
+    }
+  }
+}
+// client end
+
+// portfolio start
+.portfolio {
+  background: linear-gradient(to right, #23252fd4, #23252fd4),
+    url(../img/counter-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .section-container {
+    padding: 90px 15px;
+    @include grid(30px);
+    grid-template-columns: repeat(4, 1fr);
+
+    @include responsive_medium {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include responsive(0, 385px) {
+      grid-template-columns: 1fr;
+      padding: 50px 15px;
+    }
+  }
+
+  .portfolio-item {
+    color: $white;
+
+    &__counter {
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 38.6px;
+      position: relative;
+
+      &::after {
+        content: '+';
+        position: absolute;
+        top: -15px;
+        right: -25px;
+        font-size: 32px;
+      }
+    }
+
+    &__title {
+      text-transform: capitalize;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 31.6px;
+    }
+  }
+}
+// portfolio end
+
+// pricing start
+.pricing {
+  background-color: #f9f9fd;
+
+  .pricing-container {
+    margin-top: 50px;
+    @include grid(40px);
+    grid-template-columns: repeat(3, 1fr);
+
+    @include responsive_large {
+      gap: 25px;
+    }
+
+    @include responsive_medium {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .pricing-item {
+    margin: 0 auto;
+    width: 100%;
+    padding: 45px 20px;
+    padding-bottom: 55px;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+    @include responsive_medium {
+      max-width: 300px;
+    }
+
+    &__price {
+      display: inline-block;
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 53.2px;
+      position: relative;
+
+      &::after {
+        content: '$';
+        font-size: 27px;
+        position: absolute;
+        top: -20px;
+        right: -15px;
+      }
+    }
+
+    &__time-limit {
+      font-size: 18px;
+      line-height: 21.6px;
+      color: $pri_grey;
+    }
+
+    ul {
+      margin-top: 45px;
+      margin-bottom: 40px;
+
+      li {
+        line-height: 30px;
+        color: $pri_dark;
+
+        &::before {
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          margin-right: 8px;
+          content: '\f101';
+          color: $pri_clr;
+        }
+      }
+    }
+
+    &.free {
+      .pricing-item__time-limit {
+        visibility: hidden;
+
+        @include responsive_medium {
+          display: none;
+        }
+      }
+
+      .pricing-item__price::after {
+        content: '';
+      }
+    }
+  }
+}
+// pricing end
+
+// brand start
+.brand {
+  .section-container {
+    padding: 70px 15px;
+  }
+
+  &-swiper {
+    height: 125px;
+
+    .swiper-pagination-bullet {
+      width: 5px;
+
+      &-active {
+        background-color: $pri_dark;
+      }
+    }
+  }
+
+  img {
+    filter: grayscale(100%);
+    opacity: 0.75;
+    transition: all 250ms linear;
+
+    &:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+  }
+}
+// brand end
+
+// contact start
+.contact {
+  background: url(../img/contact-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .section-container {
+    padding: 70px 15px;
+  }
+
+  .form-container {
+    @include grid(0);
+    margin: 40px auto;
+    margin-bottom: 25px;
+    padding: 0 90px;
+    grid-gap: 10px 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-areas:
+      'name email'
+      'subject contact'
+      'message message';
+
+    @include responsive_large {
+      padding: 0 40px;
+    }
+
+    @include responsive_medium {
+      grid-template-areas:
+        'name'
+        'email'
+        'subject'
+        'contact'
+        'message';
+    }
+
+    @include responsive_small {
+      padding: 0px;
+    }
+  }
+
+  .input-container {
+    text-align: left;
+    width: 100%;
+
+    @include responsive_medium {
+      justify-self: center;
+      max-width: 400px;
+    }
+
+    label {
+      line-height: 30.4px;
+    }
+
+    textarea,
+    input {
+      width: 100%;
+      padding: 13px 10px;
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid #eaebec;
+
+      &:focus {
+        border-color: $pri_clr;
+      }
+    }
+
+    textarea {
+      height: 200px;
+    }
+  }
+
+  #name {
+    grid-area: name;
+  }
+  #email {
+    grid-area: email;
+  }
+  #subject {
+    grid-area: subject;
+  }
+  #contact {
+    grid-area: contact;
+  }
+  #message {
+    grid-area: message;
+  }
+}
+// contact end
