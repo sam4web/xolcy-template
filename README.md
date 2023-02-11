@@ -7,13 +7,16 @@
 - [Source Code](https://github.com/sam4web/xolcy-template) (Github)
 
 
-### This website includes & uses:
+### Tools used:
+- HTML
+- SCSS
+- Swiper slider
+- Bootstrap
+- jQuery
+
+
+### Includes:
 - theme changer with 6 colors
-- slider form swiper slider
-- scrollspy from bootstrap
-- jQuery for simple JavaScript
 - beautiful transitions and animations
 - responsive design
 - mobile friendly
-- ready to use for any business purposes
-
