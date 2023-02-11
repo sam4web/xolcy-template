@@ -1,10 +1,13 @@
 ## Xolcy
 
-[Live site](https://sam4web.github.io/xolcy-template/)
-[![project preview](./project-preview.png)](https://sam4web.github.io/xolcy-template/)
+![project preview](./project-preview.png)
+
+### View:
+- [Live site](https://sam4web.github.io/xolcy-template/) (Github Pages)
+- [Source Code](https://github.com/sam4web/xolcy-template) (Github)
+
 
 ### This website includes & uses:
-
 - theme changer with 6 colors
 - slider form swiper slider
 - scrollspy from bootstrap
@@ -13,3 +16,4 @@
 - responsive design
 - mobile friendly
 - ready to use for any business purposes
+
